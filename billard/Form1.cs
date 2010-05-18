@@ -15,5 +15,10 @@ namespace billard
         {
             InitializeComponent();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.jeux1.BStop = true;
+        }
     }
 }

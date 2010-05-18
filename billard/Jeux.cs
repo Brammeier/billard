@@ -24,13 +24,23 @@ namespace billard
         /// </summary>
         PointF _v ;
         /// <summary>
-        /// Diametre de la balle
+        /// Rayon de la balle
         /// </summary>
-        const float _diam = 10.0f;
+        const float _rayon = 5.0f;
         /// <summary>
         /// Thread de gestion des deplacements
         /// </summary>
         Thread _thread = null;
+        /// <summary>
+        /// Boolean pour stopper le thread
+        /// </summary>
+        bool _bStop = false;
+
+        public bool BStop
+        {
+            get { return _bStop; }
+            set { _bStop = value; }
+        }
 
         /// <summary>
         /// Contructeur
@@ -39,7 +49,7 @@ namespace billard
         {
             InitializeComponent();
             _thread = new Thread(ThreadFunc);
-            _p = new PointF(10, 10);
+            _p = new PointF(50, 50);
             _v = new PointF(1.0f, 1.0f);
             _thread.Start();
         }
@@ -49,18 +59,18 @@ namespace billard
         /// </summary>
         void ThreadFunc()
         {
-            for (; ; )
+            for (; _bStop == false; )
             {
                 //Deplacement sur les X
                 _p.X += _v.X;
                 //Test si on sort sur les X
-                if ((_p.X<0.0f) || (_p.X > this.Width))
+                if ((_p.X<_rayon) || (_p.X > this.Width-_rayon))
                     _v.X *= -1.0f;
 
                 //Deplacement sur les Y
                 _p.Y += _v.Y;
                 //Test si on sort sur les Y
-                if  ((_p.Y<0.0f) || (_p.Y > this.Height))
+                if ((_p.Y < _rayon) || (_p.Y > this.Height - _rayon))
                     _v.Y *= -1.0f;
 
                 //Attente
@@ -77,7 +87,7 @@ namespace billard
         protected override void OnPaint(PaintEventArgs e)
         {
             Pen pen = new Pen(new SolidBrush(Color.Black));
-            e.Graphics.DrawEllipse(pen, _p.X, _p.Y, _diam, _diam);
+            e.Graphics.DrawEllipse(pen, _p.X - _rayon, _p.Y - _rayon, _rayon*2.0f, _rayon*2.0f);
             base.OnPaint(e);
         }
     }
