@@ -15,18 +15,8 @@ namespace billard
     /// </summary>
     public partial class Jeux : UserControl
     {
-        /// <summary>
-        /// Position de la balle
-        /// </summary>
-        PointF _p ;
-        /// <summary>
-        /// Vecteur de deplacement
-        /// </summary>
-        PointF _v ;
-        /// <summary>
-        /// Rayon de la balle
-        /// </summary>
-        const float _rayon = 5.0f;
+        List<Balle> _balles = new List<Balle>();
+
         /// <summary>
         /// Thread de gestion des deplacements
         /// </summary>
@@ -49,9 +39,9 @@ namespace billard
         {
             InitializeComponent();
             _thread = new Thread(ThreadFunc);
-            _p = new PointF(50, 50);
-            _v = new PointF(1.0f, 1.0f);
             _thread.Start();
+            _balles.Add(new Balle(new PointF(50.0f,50.0f)));
+            _balles.Add(new Balle(new PointF(150.0f, 100.0f)));
         }
 
         /// <summary>
@@ -61,18 +51,10 @@ namespace billard
         {
             for (; _bStop == false; )
             {
-                //Deplacement sur les X
-                _p.X += _v.X;
-                //Test si on sort sur les X
-                if ((_p.X<_rayon) || (_p.X > this.Width-_rayon))
-                    _v.X *= -1.0f;
-
-                //Deplacement sur les Y
-                _p.Y += _v.Y;
-                //Test si on sort sur les Y
-                if ((_p.Y < _rayon) || (_p.Y > this.Height - _rayon))
-                    _v.Y *= -1.0f;
-
+                foreach (var item in _balles)
+                {
+                    item.deplacement(this.Width, this.Height);
+                }
                 //Attente
                 Thread.Sleep(10);
                 //Force le repaint 
@@ -86,8 +68,11 @@ namespace billard
         /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            Pen pen = new Pen(new SolidBrush(Color.Black));
-            e.Graphics.DrawEllipse(pen, _p.X - _rayon, _p.Y - _rayon, _rayon*2.0f, _rayon*2.0f);
+            foreach (var item in _balles)
+            {
+                item.dessin(e.Graphics); 
+            }
+            
             base.OnPaint(e);
         }
     }
