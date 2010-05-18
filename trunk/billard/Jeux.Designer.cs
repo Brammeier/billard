@@ -1,13 +1,13 @@
 ﻿namespace billard
 {
-    partial class Form1
+    partial class Jeux
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,40 +20,27 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.jeux1 = new billard.Jeux();
             this.SuspendLayout();
             // 
-            // jeux1
-            // 
-            this.jeux1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.jeux1.Location = new System.Drawing.Point(12, 12);
-            this.jeux1.Name = "jeux1";
-            this.jeux1.Size = new System.Drawing.Size(368, 191);
-            this.jeux1.TabIndex = 0;
-            // 
-            // Form1
+            // Jeux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 251);
-            this.Controls.Add(this.jeux1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Name = "Jeux";
+            this.Size = new System.Drawing.Size(368, 191);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Jeux jeux1;
     }
 }
-
