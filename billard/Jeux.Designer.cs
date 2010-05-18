@@ -37,6 +37,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Name = "Jeux";
             this.Size = new System.Drawing.Size(368, 191);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Jeux_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Jeux_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Jeux_MouseUp);
             this.ResumeLayout(false);
 
         }

@@ -12,10 +12,21 @@ namespace billard
         /// Position de la balle
         /// </summary>
         PointF _p;
+
+        public PointF Position
+        {
+            get { return _p; }
+        }
         /// <summary>
         /// Vecteur de deplacement
         /// </summary>
         PointF _v;
+
+        public PointF Vecteur
+        {
+            get { return _v; }
+            set { _v = value; }
+        }
         /// <summary>
         /// Rayon de la balle
         /// </summary>
@@ -23,8 +34,7 @@ namespace billard
 
         public Balle()
         {
-            Init( new PointF(50, 50) );
-            
+            Init( new PointF(50, 50) );            
         }
 
         public Balle(PointF p)
@@ -35,7 +45,7 @@ namespace billard
         void Init(PointF p)
         {
             _p = p;
-            _v = new PointF(1.0f, 1.0f);
+            //_v = new PointF(1.0f, 1.0f);
         }
 
         public void deplacement(int Width, int Height)
@@ -57,6 +67,19 @@ namespace billard
         {
             Pen pen = new Pen(new SolidBrush(Color.Black));
             g.DrawEllipse(pen, _p.X - _rayon, _p.Y - _rayon, _rayon * 2.0f, _rayon * 2.0f);
+        }
+
+        /// <summary>
+        /// Est que l'on est a l'interieur de la balle ?
+        /// </summary>
+        /// <param name="point">position du click souris</param>
+        /// <returns></returns>
+        internal bool isIn(Point point)
+        {
+            //Theoreme de pytagore
+            // sqrt( a²+b² )
+            double d = Math.Sqrt((point.X - _p.X) * (point.X - _p.X) + (point.Y - _p.Y) * (point.Y - _p.Y));
+            return d < (_rayon * 2.0);
         }
     }
 }
