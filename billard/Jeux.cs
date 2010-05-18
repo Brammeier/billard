@@ -53,7 +53,7 @@ namespace billard
             _thread = new Thread(ThreadFunc);
             _thread.Start();
             _balles.Add(new Balle(new PointF(50.0f,50.0f)));
-            _balles.Add(new Balle(new PointF(150.0f, 100.0f)));
+            _balles.Add(new Balle(new PointF(70.0f, 50.0f)));
         }
 
         /// <summary>
@@ -66,6 +66,21 @@ namespace billard
                 foreach (var item in _balles)
                 {
                     item.deplacement(this.Width, this.Height);
+                    for (int i = 0; i < 1; i++)
+                    {
+                        if (item != _balles[i])
+                        {
+                            if (item.distance(_balles[i].Position) < (Balle._rayon * 2.0f))
+                            {
+                                //Colision
+                                //Calcul du vecteur des centres des boules à l'impact
+                                PointF v = new PointF(item.Vecteur.X - _balles[i].Vecteur.X, item.Vecteur.Y - _balles[i].Vecteur.Y);
+                                item.Vecteur = new PointF(v.Y, v.X);
+                                //_balles[i].Vecteur = new PointF(item.Vecteur.X, item.Vecteur.Y);
+                                //item.Vecteur = new PointF(-item.Vecteur.X,-item.Vecteur.Y);
+                            }
+                        }
+                    }
                 }
                 //Attente
                 Thread.Sleep(10);

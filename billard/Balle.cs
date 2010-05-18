@@ -30,7 +30,7 @@ namespace billard
         /// <summary>
         /// Rayon de la balle
         /// </summary>
-        const float _rayon = 5.0f;
+        public const float _rayon = 5.0f;
 
         public Balle()
         {
@@ -80,6 +80,16 @@ namespace billard
             // sqrt( a²+b² )
             double d = Math.Sqrt((point.X - _p.X) * (point.X - _p.X) + (point.Y - _p.Y) * (point.Y - _p.Y));
             return d < (_rayon * 2.0);
+        }
+
+        /// <summary>
+        /// Calcul de la distance a un point
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        internal float distance(PointF point)
+        {
+            return (float)Math.Sqrt((point.X - _p.X) * (point.X - _p.X) + (point.Y - _p.Y) * (point.Y - _p.Y));
         }
     }
 }
