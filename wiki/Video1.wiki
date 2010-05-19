@@ -1,0 +1,9 @@
+#summary One-sentence summary of this page.
+
+= Vidéo 1 =
+
+Premier checkout du projet avec SVN (subversion).
+
+Url du projet : svn checkout http://billard.googlecode.com/svn/trunk/ billard-read-only
+
+<wiki:video url="http://www.youtube.com/watch?v=VZU06Y4_ou0"/>
