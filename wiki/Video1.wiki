@@ -1,6 +1,8 @@
-#summary One-sentence summary of this page.
+#summary Premier checkout du projet
 
 = Vidéo 1 =
+
+*Commit 0*
 
 Premier checkout du projet avec SVN (subversion).
 
