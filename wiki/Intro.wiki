@@ -24,4 +24,6 @@ Le projet passe sur la phase de spécification et de conception. Qui est pourtan
 
 Pour la conception, je vais utilisé une méthode agile pour définir des étapes au fur et à mesure.
 
+Je m'excuse pour les hésitations, pour être proche de la réalité le projet n'est pas préparé a l'avance tout ou presque est fait en temps réel.
 
+Je ne prêtant pas être un master de programmation, je suppose que certain vont criée en me voyant faire certaine chose, ou en tombant dans certain piège de débutant. Je rappel donc que ceci est juste un tutoriel pour apprend aux débutant ne prenais jamais les informations pour argent comptant c'est a vous de persévérai pour trouvé votre propre "style" de développement.
