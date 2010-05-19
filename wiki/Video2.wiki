@@ -1,0 +1,9 @@
+#summary Video2 : Création du projet sous Visual Studio
+
+= Création du projet sous Visual Studio =
+*Commit 0*
+
+ * Création d'un projet C# Windows Form
+ * Commit des fichiers avec SVN
+
+<wiki:video url="http://www.youtube.com/watch?v=_O6R4JZ5DJ0"/>
