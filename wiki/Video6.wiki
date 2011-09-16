@@ -1,0 +1,8 @@
+#summary Video 6
+
+= Déplacement Balle =
+*Commit 1*
+
+ * Dessin d'une balle
+
+<wiki:video url="http://www.youtube.com/watch?v=m8JRDcwBs6M"/>
