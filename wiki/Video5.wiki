@@ -1,0 +1,8 @@
+#summary Video 5
+
+= Membres =
+*Commit 1*
+
+ * Ajout d'un membre position
+
+<wiki:video url="http://www.youtube.com/watch?v=SXAHP50wqIU"/>
