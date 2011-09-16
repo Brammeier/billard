@@ -1,8 +1,0 @@
-#summary Video 4
-
-= Dessin Balle =
-*Commit 1*
-
- * Dessin d'une balle
-
-<wiki:video url="http://www.youtube.com/watch?v=ZeC8u7XeUEc"/>
