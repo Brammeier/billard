@@ -3,6 +3,6 @@
 = Dessin Balle =
 *Commit 1*
 
- * Dessin d'un ball
+ * Dessin d'une balle
 
-<wiki:video url="http://youtu.be/ZeC8u7XeUEc"/>
+<wiki:video url="http://www.youtube.com/watch?v=ZeC8u7XeUEc"/>
