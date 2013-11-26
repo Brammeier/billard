@@ -6,4 +6,4 @@
  * Création d'un UserControl
  * Commit des fichiers avec SVN
 
-<wiki:video url="http://www.youtube.com/watch?v=_O6R4JZ5DJ0"/>
+<wiki:video url="http://youtu.be/JMPbyxp_zBk"/>
